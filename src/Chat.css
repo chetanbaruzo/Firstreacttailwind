@@ -1,0 +1,80 @@
+/*    'xxs' : {'min': '300px', 'max': '474px'},
+      'xs' : {'min': '475px', 'max': '639px'},
+      'sm': {'min': '640px', 'max': '767px'},
+      'md': {'min': '768px', 'max': '1023px'},
+      'lg': {'min': '1024px', 'max': '1279px'},
+      'xl': {'min': '1280px', 'max': '1535px'},
+      '2xl': {'min': '1536px'}, */
+
+    /*  xxs:
+        xs:
+        sm:
+        md:
+        lg:
+        xl:
+        2xl: */
+
+.mainlogo{
+    @apply h-16 w-16
+            xxs:h-20
+            xs:h-20
+            sm:h-24
+            md:h-24
+            lg:h-24
+            xl:h-28
+            2xl:h-28
+            xxs:w-20
+            xs:w-20
+            sm:w-24
+            md:w-24
+            lg:w-24
+            xl:w-28
+            2xl:w-28
+    
+    ;
+}
+.maintext {
+    @apply text-3xl font-semibold text-black
+            xxs:text-4xl
+            xs:text-4xl
+            sm:text-5xl
+            md:text-5xl
+            lg:text-5xl
+            xl:text-6xl
+            2xl:text-6xl                                          
+    ;
+}
+.statetext{
+    @apply text-sm text-gray-500
+            xxs:text-base
+            xs:text-base
+            sm:text-lg
+            md:text-lg
+            lg:text-lg
+            xl:text-xl
+            2xl:text-xl
+    
+    ;
+}
+.mainbutton {
+    @apply mt-5 flex mx-auto py-2 px-4 text-sm font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700
+                                        xxs:text-base
+                                        xs:text-base
+                                        sm:text-lg
+                                        md:text-lg
+                                        lg:text-lg
+                                        xl:text-xl
+                                        2xl:text-xl
+    ;
+}
+.mainwidth{
+    @apply max-w-xs
+            xxs:max-w-sm
+            xs:max-w-sm
+            sm:max-w-md
+            md:max-w-md
+            lg:max-w-md
+            xl:max-w-lg
+            2xl:max-w-lg
+    ;
+}

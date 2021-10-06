@@ -4,10 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Chat from './Chat';
+import Message from './Message';
+import Messagechild from './Messagechild';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Chat />
+    <Messagechild />
   </React.StrictMode>,
   document.getElementById('root')
 );
