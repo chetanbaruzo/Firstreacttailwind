@@ -9,7 +9,7 @@ import Messagechild from './Messagechild';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Messagechild />
+    <Message />
   </React.StrictMode>,
   document.getElementById('root')
 );
