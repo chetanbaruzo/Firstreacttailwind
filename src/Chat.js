@@ -23,13 +23,13 @@ class Chat extends Component {
     render() {
         return (
             <div className="mt-20 mb-auto">
-            <div className="flex items-center space-x-2 p-6 mainwidth mx-auto bg-white rounded-xl shadow-md">
+            <div className="flex items-center space-x-2 p-6 chatwidth mx-auto bg-white rounded-xl shadow-md">
               <div className="flex-shrink-0">
-                <img className="mainlogo" src="./chat.png" alt="chat logo"/>
+                <img className="chatlogo" src="./chat.png" alt="chat logo"/>
             </div>
             <div>
-                <div className="maintext">Let's Chat</div>
-                <p className="statetext">{this.state.msg}</p>
+                <div className="chatmaintext ">Let's Chat</div>
+                <p className="chatstatetext">{this.state.msg}</p>
             </div>
                 
               
@@ -38,7 +38,7 @@ class Chat extends Component {
             <button onClick={()=>{
               this.handleClick()
 
-            }} className="mainbutton">click me to see message</button>
+            }} className="chatbutton">click me to see message</button>
             </div>
           )
     }

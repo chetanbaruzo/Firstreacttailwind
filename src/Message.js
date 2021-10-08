@@ -19,7 +19,7 @@ class Message extends React.Component {
           The child component calls the parent callback function using props.
           */}
         <Messagechild parentCallback={this.callbackFunction} />
-        <p className="outputtext">Output will be here: {this.state.message} </p>
+        <p className="messageoutputtext">Output will be here: {this.state.message} </p>
       </div>
     );
   }

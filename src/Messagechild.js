@@ -29,19 +29,19 @@ class Messagechild extends Component {
     return (
       <div className="flex mt-20 mb-auto mx-1.5 justify-center">
         <input
-          className="inputtext"
+          className="messageinputtext"
           type="text"
           onChange={this.updateInput}
           placeholder="Write anything"
-        ></input>{" "}
+        ></input>
         {/* onChange is event Handler, when typed in, passes its current value to the updateInput function. */}
         <button
-          className="mainbutton"
+          className="messagebutton"
           type="button"
           onClick={this.handleSubmit}
         >
           Submit
-        </button>{" "}
+        </button>
         {/* onClick is event Handler, when click the button, it triggr the handleSubmit function. */}
       </div>
     );

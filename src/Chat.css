@@ -14,7 +14,7 @@
         xl:
         2xl: */
 
-.mainlogo{
+.chatlogo{
     @apply h-16 w-16
             xxs:h-20
             xs:h-20
@@ -33,7 +33,7 @@
     
     ;
 }
-.maintext {
+.chatmaintext {
     @apply text-3xl font-semibold text-black
             xxs:text-4xl
             xs:text-4xl
@@ -44,7 +44,7 @@
             2xl:text-6xl                                          
     ;
 }
-.statetext{
+.chatstatetext{
     @apply text-sm text-gray-500
             xxs:text-base
             xs:text-base
@@ -56,7 +56,7 @@
     
     ;
 }
-.mainbutton {
+.chatbutton {
     @apply mt-5 flex mx-auto py-2 px-4 text-sm font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700
                                         xxs:text-base
                                         xs:text-base
@@ -67,7 +67,7 @@
                                         2xl:text-xl
     ;
 }
-.mainwidth{
+.chatwidth{
     @apply max-w-xs
             xxs:max-w-sm
             xs:max-w-sm
