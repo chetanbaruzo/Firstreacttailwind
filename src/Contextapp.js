@@ -8,7 +8,7 @@ import './Contextapp.css'
 class Contextapp extends Component{
     render(){
         return(
-        <div className="mt-10 flex flex-col items-center transform scale-125">
+        <div className="mt-10 flex flex-col items-center">
             <UserInput /><UserOutput />
         </div>
         );

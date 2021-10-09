@@ -1,0 +1,27 @@
+/*    'xxs' : {'min': '300px', 'max': '474px'},
+      'xs' : {'min': '475px', 'max': '639px'},
+      'sm': {'min': '640px', 'max': '767px'},
+      'md': {'min': '768px', 'max': '1023px'},
+      'lg': {'min': '1024px', 'max': '1279px'},
+      'xl': {'min': '1280px', 'max': '1535px'},
+      '2xl': {'min': '1536px'}, */
+ 
+/*  xxs:
+    xs:
+    sm:
+    md:
+    lg:
+    xl:
+    2xl: */
+ 
+        .ClassContextinputtext {
+            @apply ml-4 mr-4 shadow-lg border rounded w-auto pl-4 pr-4 text-black  focus:outline-none py-0;
+          }
+          
+          .ClassContextbutton {
+            @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-5 ml-2 rounded focus:outline-none;
+          }
+          
+          .ClassContextoutputtext {
+            @apply border rounded bg-red-200 mx-1.5 mt-3 pl-4 pr-4;
+          }
