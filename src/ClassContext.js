@@ -6,6 +6,7 @@ export const ClassContext = createContext(); //exporting context object
  
 export class ClassProvider extends Component {
   state = { message: "" };
+  
   render() {
     return (
       <ClassContext.Provider
@@ -23,4 +24,8 @@ export class ClassProvider extends Component {
       </ClassContext.Provider>
     );
   }
+
+
+
+
 }

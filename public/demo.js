@@ -1,71 +1,59 @@
-let object1 = {
-  id: 7,
-  name: "chetan",
-  Hobbie: "Watching Movie",
-  languageUsing: "React",
-  country: "India",
-  male: true,
-  book: [
-    {
-      language: "React",
-      edition: "First",
-    },
-  ],
-};
+// Async / await example fetch the data from github user api and converted into JavaScript object.
+console.log("start");
+async function myfun() {
+  console.log("inside function");
+  const response = await fetch("https://api.github.com/users");
+  console.log("before response");
+  const users = await response.json();
+  console.log("users resolved");
 
-
-let { id, name, book } = object1;
-document.write("<br>");
-document.write("id = " + id);
-document.write("<br>");
-document.write("name = " + name);
-document.write("<br>");
-document.write("Hobbie = " + object1.Hobbie);
-document.write("<br>");
-document.write("Language = " + object1.languageUsing);
-document.write("<br>");
-document.write("Country = " + object1.country);
-document.write("<br>");
-document.write("Male = " + object1.male);
-document.write("<br>");
-
-document.write("Book Language= " + book[0].language);
-document.write("<br>");
-
-
-
-let str = "chetan";
-let copystr = str;
-str = "hello"
-console.log(str); //hello
-console.log(copystr); //chetan
-
-let arr = [1,2,3,4,5];
-let copyarr = arr;
-arr[5] = 6;
-console.log(arr); //[1, 2, 3, 4, 5, 6]
-console.log(copyarr); //[1, 2, 3, 4, 5, 6]
-
-
-var emptyobj = {};
-console.log(emptyobj);
-var newobj = new Object();
-console.log(newobj);
-newobj = {"name": "chetan"};
-newobj = {"gender": "male"};
-console.log(newobj);
+  return users;
+}
+console.log("before calling function");
+let myvar = myfun();
+console.log("after calling function");
+console.log(myvar);
+myvar.then((data) => {
+  console.log(data);
+  var s = [];
+  for (let i = 0; i < data.length; i++) {
+    
+    s.push(data[i].login);
+  }
+  console.log(s);
+  document.getElementById('userid').innerHTML = s.join(', ');
+  
+});
+console.log("last line of the code");
 
 
 
 
+// JSON example
+// let obj = {
+//   id: 7,
+//   name: "chetan",
+//   Hobbie: "Watching Movie",
+//   languageUsing: "React",
+//   country: "India",
+//   male: true,
+//   book: [
+//     {
+//       language: "React",
+//       edition: "First",
+//     },
+//   ],
+// };
 
+// let obj1 = obj;
 
+// console.log(obj1);
 
-
-
-
-
-
+// let str = `{"name": "hello"}`;
+// let str1 = JSON.parse(str);
+// console.log(typeof(str));
+// console.log(typeof(str1));
+// console.log(str1);
 
 // // Default Binding in JavaScript
 // // this keyword is refered to as global object and name() is a standalone and unattached function, so it is bound to the global scope.
