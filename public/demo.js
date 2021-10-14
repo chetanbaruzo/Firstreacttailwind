@@ -1,30 +1,40 @@
-// Async / await example fetch the data from github user api and converted into JavaScript object.
-console.log("start");
-async function myfun() {
-  console.log("inside function");
-  const response = await fetch("https://api.github.com/users");
-  console.log("before response");
-  const users = await response.json();
-  console.log("users resolved");
 
-  return users;
-}
-console.log("before calling function");
-let myvar = myfun();
-console.log("after calling function");
-console.log(myvar);
-myvar.then((data) => {
-  console.log(data);
-  var s = [];
-  for (let i = 0; i < data.length; i++) {
-    
-    s.push(data[i].login);
-  }
-  console.log(s);
-  document.getElementById('userid').innerHTML = s.join(', ');
+
+
+
+
+
+
+
+
+// // Async / await example fetch the data from github user api and converted into JavaScript object.
+
+// async function fetchDatafromApi(arg) {
+//   // fetchDatafromApi fetch the data from below API
+//   const response = await fetch(arg);
   
-});
-console.log("last line of the code");
+//   const users = response.json();
+//   console.log("User data fullfiled");
+
+//   return users;
+// }
+
+// let api = "https://api.github.com/users";
+// let callingApi = fetchDatafromApi(api);
+
+// console.log(callingApi);
+// callingApi.then((data) => {
+//   console.log(data);
+//   var loginData = [];
+//   for (let i = 0; i < data.length; i++) {
+    
+//     loginData.push(data[i].login);
+//   }
+  
+//   document.getElementById('userid').innerHTML = loginData.join(', ');
+  
+// });
+
 
 
 
