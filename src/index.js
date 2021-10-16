@@ -1,20 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Chat from "./Chat";
-import Message from "./Message";
-import Messagechild from "./Messagechild";
-import { UserProvider } from "./UserContext";
-import Contextapp from "./Contextapp";
-import { ClassProvider } from "./ClassContext";
-import ClassContextApp from "./ClassContextApp";
+import MultiPageBrowserRouter from "./MultiPageBrowserRouter";
 import FetchUsersFromApi from "./FetchUsersFromApi";
+import MultiPageFetchUserData from "./MultiPageFetchUserData";
 
 ReactDOM.render(
   <React.StrictMode>
-    <FetchUsersFromApi />
+  {/* To create multipage in react render the BrowserRouter object */}
+    <BrowserRouter>
+      <MultiPageFetchUserData/>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

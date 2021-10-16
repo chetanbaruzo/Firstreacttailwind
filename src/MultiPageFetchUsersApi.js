@@ -1,14 +1,16 @@
 import React from "react";
 import { Component } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import About from "./About";
 
-class FetchUsersFromApi extends Component {
+class MultiPageFetchUserApi extends Component {
   // FetchUsersFromApi is class component which fetching users data from below API
   constructor(props) {
     super(props);
     this.state = { loadingData: true, users: [] };
   }
 
-  async fetchDataAsyncFunction() {
+  async MultifetchDataAsyncFunction() {
     // fetchDataAsyncFunction is fetching users data from this API
     const apiUrl = "https://api.github.com/users";
     const response = await fetch(apiUrl);
@@ -17,7 +19,7 @@ class FetchUsersFromApi extends Component {
     this.setState({ loadingData: false, users: userData });
   }
   componentDidMount() {
-    this.fetchDataAsyncFunction();
+    this.MultifetchDataAsyncFunction();
   }
   render() {
     if (this.state.loadingData) {
@@ -27,7 +29,7 @@ class FetchUsersFromApi extends Component {
     const apiUrl = "https://api.github.com/users";
 
     return (
-      
+        <Router>
       <div className="bg-green-400 ">
         <div className="flex flex-wrap ">
           {users.map(({ login, avatar_url }, index) => {
@@ -35,22 +37,28 @@ class FetchUsersFromApi extends Component {
               <div className="my-1 mx-1.5 text-center" key={index}>
                 <p className="p-5 rounded-xl">
                   {
-                    <a href={`${apiUrl}/${login}`} target="_blank" rel="noopener noreferrer"><img
+                    <Link to={'/'}><img
                       className="rounded-xl h-28 w-28"
                       src={avatar_url}
                       alt="Avatar"
-                    /></a>
+                    /></Link>
                   }
                 </p>
                 <p className="text-xl">{login}</p>
                 
+                <Switch>
+                        
+                <Route path='/users/:id' exact><About/></Route>
+                        
+                </Switch>
               </div>
             );
           })}
         </div>
       </div>
+      </Router>
     );
   }
 }
 
-export default FetchUsersFromApi;
+export default MultiPageFetchUserApi;
