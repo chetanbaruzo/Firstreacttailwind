@@ -1,34 +1,31 @@
-import React from "react";
-import { Component } from "react";
+import React, { Component } from 'react';
+import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-class MultiPageFetchUserApi extends Component {
-  // FetchUsersFromApi is class component which fetching users data from below API
-  constructor(props) {
-    super(props);
-    this.state = { loadingData: true, users: [] };
-  }
-
-  async MultifetchDataAsyncFunction() {
-    // MultifetchDataAsyncFunction is fetching users data from this API
-
-    const apiUrl = "https://616a755d16e7120017fa0fac.mockapi.io/api/users";
-    const response = await fetch(apiUrl);
-    const userData = await response.json();
-    this.setState({ loadingData: false, users: userData });
-  }
-  // Execute componentDidMount method after component render 
-  componentDidMount() {
-    this.MultifetchDataAsyncFunction();
-  }
-  render() {
-    if (this.state.loadingData) {
-      return <p>Loading...</p>;
+class AxiosFetchUserApi extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { users: [] };
     }
-    const { users } = this.state;
-
-    return (
-      <Router>
+    // Execute componentDidMount method after component render 
+    componentDidMount(){
+        const apiUrl = "https://616a755d16e7120017fa0fac.mockapi.io/api/users";
+        // Making a GET Request using axiom gives promise
+        axios.get(apiUrl)
+        .then((response) => {
+            const usersData = response.data;
+            this.setState({ users: usersData });
+        })
+        .catch((error) => {
+            document.write("Error 404 (Not Found)");
+        })
+    }
+    
+    render() {
+        
+          const { users } = this.state;
+        return (
+            <Router>
         <div className="bg-green-400 ">
           <div className="flex flex-wrap">
             {users.map(
@@ -80,8 +77,8 @@ class MultiPageFetchUserApi extends Component {
           </div>
         </div>
       </Router>
-    );
-  }
+        );
+    }
 }
 
-export default MultiPageFetchUserApi;
+export default AxiosFetchUserApi;
