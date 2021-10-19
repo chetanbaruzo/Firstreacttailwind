@@ -8,6 +8,8 @@ import Contact from './Contact';
 class MultiPageBrowserRouter extends Component{
     render() {
         return(
+            <div>
+            {/* users click on the different <Link>s, the router renders the matching <Route>. */}
             <Router>
                 <div className="text-center">
                     <h1 className="text-xl">Multi Page Browser Router App</h1>
@@ -23,11 +25,12 @@ class MultiPageBrowserRouter extends Component{
                          renders the first one that matches the current URL. */}
                     <Switch>
                         <Route path='/' exact><Home/></Route>
-                        <Route path='/about' ><About/></Route>
-                        <Route path='/contact' ><Contact/></Route>
+                        <Route path='/about' exact><About/></Route>
+                        <Route path='/contact' exact><Contact/></Route>
                     </Switch>
                 </div>
             </Router>
+            </div>
         );
     }
 }

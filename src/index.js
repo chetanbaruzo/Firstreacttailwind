@@ -1,15 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import AxiosFetchUserData from "./AxiosFetchUserData";
+import AxiosGetFetchApi from "./AxiosGetFetchApi";
+import MultiPageBrowserRouter from "./MultiPageBrowserRouter";
+
 
 ReactDOM.render(
   <React.StrictMode>
     {/* To create multipage in react render the BrowserRouter object */}
     <BrowserRouter>
-      <AxiosFetchUserData />
+    <Route path='/'>
+      <AxiosGetFetchApi />
+      </Route>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
