@@ -6,16 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 import AxiosFetchUserData from "./AxiosFetchUserData";
 import AxiosGetFetchApi from "./AxiosGetFetchApi";
 import MultiPageBrowserRouter from "./MultiPageBrowserRouter";
+import NestedRouting from "./NestedRouting";
+import UseEffectApi from "./UseEffectApi";
 
 
 ReactDOM.render(
   <React.StrictMode>
     {/* To create multipage in react render the BrowserRouter object */}
+    
     <BrowserRouter>
-    <Route path='/'>
-      <AxiosGetFetchApi />
-      </Route>
-    </BrowserRouter>
+      <NestedRouting/>
+      </BrowserRouter>
+    
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -35,21 +35,14 @@ class AxiosGetFetchApi extends Component {
                 {
                   name,
                   avatar,
-                  id,
-                  email,
-                  city,
-                  job,
-                  department,
-                  country,
-                  vehicle,
-                  phone,
+                  id
                 },
                 index
               ) => {
                 return (
                   <div className="my-1 mx-1.5 text-left" key={index}>
                     <p className="p-5 rounded-xl">
-                      <Link to={`/users/${id}`}>
+                      <Link to={`/users/${id}`} target="_blank">
                         <img
                           className="rounded-xl h-36 w-36"
                           src={avatar}
@@ -60,18 +53,11 @@ class AxiosGetFetchApi extends Component {
                     {/* A <Switch> looks through its children <Route>s and
                   renders the first one that matches the current URL. */}
                     <Switch>
-                      <Route path={`/users/${id}`} exact>
+                      <Route path={`/users/${id}`} >
                         <AxiosGetFetchApiRoute
                           key={index}
                           id={id}
                           name={name}
-                          email={email}
-                          city={city}
-                          job={job}
-                          department={department}
-                          country={country}
-                          vehicle={vehicle}
-                          phone={phone}
                         />
                       </Route>
                     </Switch>
