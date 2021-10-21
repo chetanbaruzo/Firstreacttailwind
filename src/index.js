@@ -1,22 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import AxiosFetchUserData from "./AxiosFetchUserData";
-import AxiosGetFetchApi from "./AxiosGetFetchApi";
-import MultiPageBrowserRouter from "./MultiPageBrowserRouter";
-import NestedRouting from "./NestedRouting";
-import UseEffectApi from "./UseEffectApi";
-
-
+import AxiosPostRequest from "./AxiosPostRequest";
+import AxiosAsyncAwaitPostrequest from "./AxiosAsyncAwaitPostRequest";
+import NestedRouting from './NestedRouting'
 ReactDOM.render(
   <React.StrictMode>
-    {/* To create multipage in react render the BrowserRouter object */}
-    
-    <BrowserRouter>
-      <NestedRouting/>
-      </BrowserRouter>
+  
+    <NestedRouting/>
     
   </React.StrictMode>,
   document.getElementById("root")

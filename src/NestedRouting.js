@@ -10,7 +10,10 @@ import {
   useHistory,
 } from "react-router-dom";
 
-import AxiosGetFetchApiRoute from './AxiosGetFetchApiRoute';
+import AxiosGetFetchApiRoute from "./AxiosGetFetchApiRoute";
+import AxiosFetchUserApi from "./AxiosFetchUserApi";
+import AxiosGetFetchApi from "./AxiosGetFetchApi";
+import axios from "axios";
 
 export default function NestedRouting() {
   return (
@@ -36,7 +39,7 @@ export default function NestedRouting() {
 
         <Switch>
           <Route path="/about">
-            <AxiosGetFetchApiRoute />
+            <About />
           </Route>
           <Route path="/topics">
             <Topics />
@@ -44,9 +47,13 @@ export default function NestedRouting() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/user/:username">
+          <Route path="/user/:id">
             <User />
           </Route>
+          <Route path="/user">
+            <AxiosGetFetchApi />
+          </Route>
+
           <Route path="/">
             <Home />
           </Route>
@@ -80,10 +87,8 @@ function Topics() {
     getUsers();
   }, []);
   function sayHello(id) {
-   console.log(id);
-      <AxiosGetFetchApiRoute id={id}></AxiosGetFetchApiRoute>
-    
-    
+    console.log(id);
+    <AxiosGetFetchApiRoute id={id}></AxiosGetFetchApiRoute>;
   }
   return (
     <div>
@@ -120,10 +125,9 @@ function Topics() {
             <button
               onClick={() => {
                 history.push("/about");
-                sayHello({index});
+                sayHello({ index });
               }}
             >
-            
               <img src={element.avatar_url} alt="avatar" />
             </button>
           </div>
@@ -164,7 +168,29 @@ function Login() {
   );
 }
 
-// All route props (match, location and history) are available to User
-function User(props) {
-  return <h1>Hello {props.match.params.username}!</h1>;
-}
+export const User = () => {
+  const { id } = useParams();
+
+  const [userData, setuserData] = useState(null);
+
+  useEffect(() => {
+    // GET request using axios inside useEffect React hook
+    axios
+      .get(`https://616a755d16e7120017fa0fac.mockapi.io/api/users/${id}`)
+      .then((response) => {
+        setuserData(response.data.name);
+      });
+
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+  }, []);
+
+  return (
+    <div>
+      <div className="bg-yellow-300 w-max px-3 rounded-md">User ID: {id} </div>
+      <br />
+      <div className="bg-gray-300 w-max px-3 rounded-md">
+        User Name: {userData}
+      </div>
+    </div>
+  );
+};
